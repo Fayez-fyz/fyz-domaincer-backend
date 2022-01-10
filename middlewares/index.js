@@ -26,7 +26,7 @@ export const canEditDeletePost = async (req, res, next) => {
 export const isAdmin = async (req, res, next) => {
   try {
     const user = await User.findById(req.user._id);
-    if (user.role !== "Recuirter") {
+    if (user.role !== "Recruiter") {
       return res.status(400).send("Unauthorized");
     } else {
       next();
